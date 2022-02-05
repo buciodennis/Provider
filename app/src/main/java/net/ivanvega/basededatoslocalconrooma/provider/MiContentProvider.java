@@ -153,16 +153,15 @@ public class MiContentProvider extends ContentProvider {
                 AppDatabase db =
                         AppDatabase.getDatabaseInstance(getContext());
                 UserDao dao = db.userDao();
-                User usuario = new User();
                 int id=Integer.parseInt(uri.getLastPathSegment());
                 List <User> usuarios=    dao.getAll();
                 for ( User u:usuarios) {
                     if(u.uid==id){
-                        usuario=u;
+                        dao.delete(u);
                         break;
                     }
                 }
-                dao.delete(usuario);
+
                 break;
         }
 
