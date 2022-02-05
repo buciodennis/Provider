@@ -3,10 +3,8 @@
     package="net.ivanvega.basededatoslocalconrooma">
     <permission android:name="READ_PROVIDER"></permission>
 
-    <permission
-        android:name="PERMISOLECTURA" />
-    <permission
-        android:name="PERMISOESCRITURA"/>
+    <permission android:name="myper.READ" />
+    <permission android:name="myper.WRITE" />
 
 
     <application
@@ -30,8 +28,8 @@
             android:authorities="net.ivanvega.basededatoslocalconrooma.provider"
             android:name=".provider.MiContentProvider"
             android:exported="true"
-            android:readPermission="PERMISOLECTURA"
-            android:writePermission="PERMISOESCRITURA"
+            android:readPermission="myper.READ"
+            android:writePermission="myper.WRITE"
 
             />
 
